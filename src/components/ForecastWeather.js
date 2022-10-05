@@ -1,11 +1,17 @@
 import React from "react";
 import "./ForecastWeather.css";
-function ForecastWeather() {
+function ForecastWeather(props) {
+  let location;
+  Object.entries(props).map((el) => {
+    location = el[1].location;
+  });
+  //console.log(location);
   return (
     <div className="main-card-1">
       <header className="card-header">
         <h2 className="card-header-value">
-          Today's ForeCast for New York City,NY,United States
+          Today's ForeCast for {location.city} City,{location.region},
+          {location.country}
         </h2>
       </header>
       <div className="value-forecast">
@@ -13,7 +19,7 @@ function ForecastWeather() {
           <li className="make-hour-1">
             <a href="#" className="make-hour-2">
               <h3 className="make-hour-3">Morning </h3>
-              <div className="make-hout-4">30°</div>
+              <div className="make-hout-4">40°</div>
               <div>
                 <img src={require("./first.png")}></img>
               </div>
@@ -25,7 +31,7 @@ function ForecastWeather() {
           <li className="make-hour-1">
             <a href="#" className="make-hour-2">
               <h3 className="make-hour-3">Afternoon </h3>
-              <div className="make-hout-4">30°</div>
+              <div className="make-hout-4">44°</div>
               <div>
                 <img src={require("./second.png")}></img>
               </div>
@@ -37,7 +43,7 @@ function ForecastWeather() {
           <li className="make-hour-1">
             <a href="#" className="make-hour-2">
               <h3 className="make-hour-3">Evening </h3>
-              <div className="make-hout-4">30°</div>
+              <div className="make-hout-4">40°</div>
               <div>
                 <img src={require("./third.png")}></img>
               </div>
@@ -49,7 +55,7 @@ function ForecastWeather() {
           <li className="make-hour-1">
             <a href="#" className="make-hour-2">
               <h3 className="make-hour-3">Overnight </h3>
-              <div className="make-hout-4">30°</div>
+              <div className="make-hout-4">35°</div>
               <div>
                 <img src={require("./fourth.png")}></img>
               </div>

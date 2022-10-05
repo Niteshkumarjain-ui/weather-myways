@@ -1,14 +1,42 @@
 import React from "react";
 import "./TodayWeather.css";
-function TodayWeather() {
+function TodayWeather(props) {
+  let location;
+  let temp,
+    text,
+    max,
+    low,
+    sunrise,
+    sunset,
+    windSpeed,
+    humidity,
+    pressure,
+    visibility;
+  Object.entries(props).map((el) => {
+    location = el[1].location;
+    temp = el[1].item.condition.temp;
+    text = el[1].item.condition.text;
+    max = el[1].item.forecast[0].high;
+    low = el[1].item.forecast[0].low;
+    sunrise = el[1].astronomy.sunrise;
+    sunset = el[1].astronomy.sunset;
+    windSpeed = el[1].wind.speed;
+    humidity = el[1].atmosphere.humidity;
+    pressure = el[1].atmosphere.pressure;
+    visibility = el[1].atmosphere.visibility;
+  });
+  console.log(visibility);
   return (
     <div className="main-card-2">
       <header className="card-1">
-        <h2 className="card-2">Weather Today in New Yorl, NY, United States</h2>
+        <h2 className="card-2">
+          Weather Today in {location.city} , {location.region} ,{" "}
+          {location.country}
+        </h2>
       </header>
       <div className="card-3">
         <div className="card-4">
-          <span className="card-5">37°</span>
+          <span className="card-5">{temp}°</span>
           <span className="card-6">Feels Like</span>
         </div>
         <div>
@@ -17,11 +45,11 @@ function TodayWeather() {
               <div>
                 <div>
                   <p>icon sunrise</p>
-                  <p>06:22</p>
+                  <p>{sunrise}</p>
                 </div>
                 <div>
                   <p>icon sunset</p>
-                  <p>18:07</p>
+                  <p>{sunset}</p>
                 </div>
               </div>
             </div>
@@ -31,7 +59,7 @@ function TodayWeather() {
       <div className="card-feature-1">
         <div className="card-feature-2">
           <svg
-            class="card-feature-3"
+            className="card-feature-3"
             set="current-conditions"
             name="temp"
             theme="dark"
@@ -45,8 +73,8 @@ function TodayWeather() {
           </svg>
           <div className="card-feature-4">High/Low</div>
           <div className="card-feature-5">
-            <span className="feature">--</span>/
-            <span className="feature">22°</span>
+            <span className="feature">{max}°</span>/
+            <span className="feature">{low}°</span>
           </div>
         </div>
         <div className="card-feature-2">
@@ -71,7 +99,7 @@ function TodayWeather() {
           </svg>
           <div className="card-feature-4">Wind</div>
           <div className="feature">
-            <span>2 km/h</span>
+            <span>{windSpeed} km/h</span>
           </div>
         </div>
         <div className="card-feature-2">
@@ -93,7 +121,7 @@ function TodayWeather() {
           </svg>
           <div className="card-feature-4">Humidity</div>
           <div className="feature">
-            <span>60%</span>
+            <span>{humidity}%</span>
           </div>
         </div>
         <div className="card-feature-2">
@@ -139,7 +167,7 @@ function TodayWeather() {
               <svg
                 set="ui"
                 name="arrow-down"
-                class="feature-extra"
+                className="feature-extra"
                 data-testid="Icon"
                 aria-hidden="true"
                 role="img"
@@ -149,7 +177,7 @@ function TodayWeather() {
                 <path d="M11 2.5a1 1 0 0 1 2 0v19a1 1 0 0 1-2 0v-19z"></path>
                 <path d="M12 20.086l7.293-7.293a1 1 0 0 1 1.414 1.414l-8 8a1 1 0 0 1-1.414 0l-8-8a1 1 0 0 1 1.414-1.414L12 20.086z"></path>
               </svg>
-              1005.8 mb
+              {pressure} mb
             </span>
           </div>
         </div>
@@ -175,7 +203,7 @@ function TodayWeather() {
         </div>
         <div className="card-feature-2">
           <svg
-            class="card-feature-3"
+            className="card-feature-3"
             set="current-conditions"
             name="visibility"
             theme="dark"
@@ -192,7 +220,7 @@ function TodayWeather() {
           </svg>
           <div className="card-feature-4">Visibility</div>
           <div className="feature">
-            <span>8.05 km</span>
+            <span>{visibility} km</span>
           </div>
         </div>
         <div className="card-feature-2">

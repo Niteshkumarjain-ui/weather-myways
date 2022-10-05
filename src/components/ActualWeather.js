@@ -1,34 +1,38 @@
 import React from "react";
 import "./ActualWeather.css";
-function ActualWeather() {
+function ActualWeather(props) {
+  let location;
+  let temp, text, max, low;
+  Object.entries(props).map((el) => {
+    location = el[1].location;
+    temp = el[1].item.condition.temp;
+    text = el[1].item.condition.text;
+    max = el[1].item.forecast[0].high;
+    low = el[1].item.forecast[0].low;
+  });
   return (
     <div className="main">
-      <section className="main-card">
+      <div className="main-card">
+        <div className="main-card-header">
+          <h1>
+            {location.city} , {location.region} , {location.country}
+            <span> As of 04.12 EDT</span>
+          </h1>
+        </div>
         <div className="main-card-one">
-          <div className="main-card-header">
-            <h1>
-              New York City, NY,United States
-              <span> As of 04.12 EDT</span>
-            </h1>
-          </div>
           <div className="main-card-two">
-            <div className="main-card-three">
-              <div className="main-card-four">
-                <span className="degree">30°</span>
-                <div className="value">Sunny</div>
-                <div className="value-1">
-                  Day <span>32°</span> . Night <span>22°</span>
-                </div>
-              </div>
-              <div className="image">
-                <img src={require("./icon.png")}></img>
-              </div>
+            <span className="degree">{temp}°</span>
+            <div className="value">{text}</div>
+            <div className="value-1">
+              Day <span>{max}°</span> . Night <span>{low}°</span>
             </div>
           </div>
+          <div>
+            <img src={require("./icon.png")}></img>
+          </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
-
 export default ActualWeather;
