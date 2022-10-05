@@ -85,3 +85,11 @@
 .feature{
     text-align: right;
 }
+.feature-extra{
+    width: 15px;
+    margin-right: 7px;
+    height: auto;
+}
+.sun-rise{
+    margin: 0 auto;
+}
