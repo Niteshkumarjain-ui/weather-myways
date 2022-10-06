@@ -33,10 +33,10 @@ function ForecastWeather(props) {
               <h3 className="make-hour-3">Afternoon </h3>
               <div className="make-hout-4">44°</div>
               <div>
-                <img src={require("./second.png")}></img>
+                <img src={require("./first.png")}></img>
               </div>
               <div className="make-hour-5">
-                <span className="make-hour-6">5%</span>
+                <span className="make-hour-6">--</span>
               </div>
             </a>
           </li>
@@ -45,7 +45,7 @@ function ForecastWeather(props) {
               <h3 className="make-hour-3">Evening </h3>
               <div className="make-hout-4">40°</div>
               <div>
-                <img src={require("./third.png")}></img>
+                <img src={require("./first.png")}></img>
               </div>
               <div className="make-hour-5">
                 <span className="make-hour-6">0%</span>
