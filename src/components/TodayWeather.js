@@ -1,5 +1,6 @@
 import React from "react";
 import "./TodayWeather.css";
+import { GiSunrise, GiSunset, GiStripedSun } from "react-icons/gi";
 function TodayWeather(props) {
   let location;
   let temp,
@@ -39,20 +40,15 @@ function TodayWeather(props) {
           <span className="card-5">{temp}°</span>
           <span className="card-6">Feels Like</span>
         </div>
-        <div>
-          <div>
-            <div>
-              <div>
-                <div>
-                  <p>icon sunrise</p>
-                  <p>{sunrise}</p>
-                </div>
-                <div>
-                  <p>icon sunset</p>
-                  <p>{sunset}</p>
-                </div>
-              </div>
-            </div>
+        <div className="sundial">
+          <div className="sun">
+            <GiStripedSun size={80} />
+          </div>
+          <div className="horizon">
+            <GiSunrise />
+            <p>{sunrise}</p>
+            <GiSunset />
+            <p>{sunset}</p>
           </div>
         </div>
       </div>
