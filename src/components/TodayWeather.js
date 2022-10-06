@@ -4,7 +4,6 @@ import { GiSunrise, GiSunset, GiStripedSun } from "react-icons/gi";
 function TodayWeather(props) {
   let location;
   let temp,
-    text,
     max,
     low,
     sunrise,
@@ -16,7 +15,6 @@ function TodayWeather(props) {
   Object.entries(props).map((el) => {
     location = el[1].location;
     temp = el[1].item.condition.temp;
-    text = el[1].item.condition.text;
     max = el[1].item.forecast[0].high;
     low = el[1].item.forecast[0].low;
     sunrise = el[1].astronomy.sunrise;
@@ -56,10 +54,8 @@ function TodayWeather(props) {
         <div className="card-feature-2">
           <svg
             className="card-feature-3"
-            set="current-conditions"
             name="temp"
             theme="dark"
-            data-testid="Icon"
             aria-hidden="true"
             role="img"
             viewBox="0 0 24 24"
@@ -76,10 +72,8 @@ function TodayWeather(props) {
         <div className="card-feature-2">
           <svg
             className="card-feature-3"
-            set="current-conditions"
             name="wind"
             theme="dark"
-            data-testid="Icon"
             aria-hidden="true"
             role="img"
             viewBox="0 0 24 24"
@@ -87,9 +81,9 @@ function TodayWeather(props) {
             <title>Wind</title>
             <path
               d="M6 8.67h5.354c1.457 0 2.234-1.158 2.234-2.222S12.687 4.4 11.354 4.4c-.564 0-1.023.208-1.366.488M3 11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4 18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153 2.153 0 0 1-1.63-.742"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="currentColor"
-              stroke-linecap="round"
+              strokeLinecap="round"
               fill="none"
             ></path>
           </svg>
@@ -101,17 +95,15 @@ function TodayWeather(props) {
         <div className="card-feature-2">
           <svg
             className="card-feature-3"
-            set="current-conditions"
             name="humidity"
             theme="dark"
-            data-testid="Icon"
             aria-hidden="true"
             role="img"
             viewBox="0 0 24 24"
           >
             <title>Humidity</title>
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M11.743 17.912a4.182 4.182 0 0 1-2.928-1.182 3.972 3.972 0 0 1-.614-4.962.743.743 0 0 1 .646-.349c.234 0 .476.095.66.275l4.467 4.355c.385.376.39.998-.076 1.275a4.216 4.216 0 0 1-2.155.588M11.855 4c.316 0 .61.14.828.395.171.2.36.416.562.647 1.857 2.126 4.965 5.684 4.965 8.73 0 3.416-2.85 6.195-6.353 6.195-3.505 0-6.357-2.78-6.357-6.195 0-3.082 2.921-6.406 4.854-8.605.242-.275.47-.535.673-.772A1.08 1.08 0 0 1 11.855 4"
             ></path>
           </svg>
@@ -123,10 +115,8 @@ function TodayWeather(props) {
         <div className="card-feature-2">
           <svg
             className="card-feature-3"
-            set="current-conditions"
             name="dewpoint"
             theme="dark"
-            data-testid="Icon"
             aria-hidden="true"
             role="img"
             viewBox="0 0 24 24"
@@ -134,7 +124,7 @@ function TodayWeather(props) {
             <title>Dew Point</title>
             <path d="M17 8.1a2.8 2.8 0 1 1 0-5.6 2.8 2.8 0 0 1 0 5.6zm0-1.85a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path>
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M9.743 18.912a4.182 4.182 0 0 1-2.928-1.182 3.972 3.972 0 0 1-.614-4.962.743.743 0 0 1 .646-.349c.234 0 .476.095.66.275l4.467 4.355c.385.376.39.998-.076 1.275a4.216 4.216 0 0 1-2.155.588M9.855 5c.316 0 .61.14.828.395.171.2.36.416.562.647 1.857 2.126 4.965 5.684 4.965 8.73 0 3.416-2.85 6.195-6.353 6.195-3.505 0-6.357-2.78-6.357-6.195 0-3.082 2.921-6.406 4.854-8.605.242-.275.47-.535.673-.772C9.245 5.14 9.54 5 9.855 5"
             ></path>
           </svg>
@@ -146,10 +136,8 @@ function TodayWeather(props) {
         <div className="card-feature-2">
           <svg
             className="card-feature-3"
-            set="current-conditions"
             name="pressure"
             theme="dark"
-            data-testid="Icon"
             aria-hidden="true"
             role="img"
             viewBox="0 0 24 24"
@@ -161,10 +149,8 @@ function TodayWeather(props) {
           <div className="feature">
             <span>
               <svg
-                set="ui"
                 name="arrow-down"
                 className="feature-extra"
-                data-testid="Icon"
                 aria-hidden="true"
                 role="img"
                 viewBox="0 0 24 24"
@@ -180,10 +166,8 @@ function TodayWeather(props) {
         <div className="card-feature-2">
           <svg
             className="card-feature-3"
-            set="current-conditions"
             name="uv"
             theme="dark"
-            data-testid="Icon"
             aria-hidden="true"
             role="img"
             viewBox="0 0 24 24"
@@ -200,10 +184,8 @@ function TodayWeather(props) {
         <div className="card-feature-2">
           <svg
             className="card-feature-3"
-            set="current-conditions"
             name="visibility"
             theme="dark"
-            data-testid="Icon"
             aria-hidden="true"
             role="img"
             width="1024"
@@ -222,10 +204,8 @@ function TodayWeather(props) {
         <div className="card-feature-2">
           <svg
             className="card-feature-3"
-            set="current-conditions"
             name="moonphase"
             theme="dark"
-            data-testid="Icon"
             aria-hidden="true"
             role="img"
             viewBox="0 0 24 24"
@@ -235,7 +215,7 @@ function TodayWeather(props) {
               fill="none"
               d="M12.099 20.19a8.095 8.095 0 1 0 0-16.19 8.095 8.095 0 0 0 0 16.19z"
               stroke="currentColor"
-              stroke-width="1.5"
+              strokeWidth="1.5"
             ></path>
             <path d="M12.079 4.518c3.4.673 4.065 5.797 4.066 7.577 0 1.78-.665 6.759-4.066 7.542-4.462 0-8.079-3.07-8.079-7.542 0-4.47 3.617-7.577 8.079-7.577z"></path>
           </svg>

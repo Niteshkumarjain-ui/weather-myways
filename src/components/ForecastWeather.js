@@ -48,7 +48,7 @@ function ForecastWeather(props) {
                 <img src={require("./first.png")}></img>
               </div>
               <div className="make-hour-5">
-                <span className="make-hour-6">0%</span>
+                <span className="make-hour-6">--</span>
               </div>
             </a>
           </li>
