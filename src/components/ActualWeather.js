@@ -28,7 +28,7 @@ function ActualWeather(props) {
             </div>
           </div>
           <div>
-            <img src={require("./icon.png")}></img>
+            <img src={require("./icon.png")} alt="icon"></img>
           </div>
         </div>
       </div>

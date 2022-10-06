@@ -21,7 +21,7 @@ function ForecastWeather(props) {
               <h3 className="make-hour-3">Morning </h3>
               <div className="make-hout-4">40°</div>
               <div>
-                <img src={require("./first.png")}></img>
+                <img src={require("./first.png")} alt="icon"></img>
               </div>
               <div className="make-hour-5">
                 <span className="make-hour-6">--</span>
@@ -33,7 +33,7 @@ function ForecastWeather(props) {
               <h3 className="make-hour-3">Afternoon </h3>
               <div className="make-hout-4">44°</div>
               <div>
-                <img src={require("./first.png")}></img>
+                <img src={require("./first.png")} alt="icon"></img>
               </div>
               <div className="make-hour-5">
                 <span className="make-hour-6">--</span>
@@ -45,7 +45,7 @@ function ForecastWeather(props) {
               <h3 className="make-hour-3">Evening </h3>
               <div className="make-hout-4">40°</div>
               <div>
-                <img src={require("./first.png")}></img>
+                <img src={require("./first.png")} alt="icon"></img>
               </div>
               <div className="make-hour-5">
                 <span className="make-hour-6">--</span>
@@ -57,7 +57,7 @@ function ForecastWeather(props) {
               <h3 className="make-hour-3">Overnight </h3>
               <div className="make-hout-4">35°</div>
               <div>
-                <img src={require("./fourth.png")}></img>
+                <img src={require("./fourth.png")} alt="icon"></img>
               </div>
               <div className="make-hour-5">
                 <span className="make-hour-6">--</span>
